@@ -26,7 +26,7 @@ type
     procedure CheckBox1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 
   private
     { Private declarations }
@@ -159,13 +159,16 @@ begin
   reg.WriteInteger('ActivePage',ComboBox1.ItemIndex);
 if checkbox1.Checked then reg.WriteString('FastConfigApply','Yes')
   else reg.WriteString('FastConfigApply','No');
+  reg.CloseKey;
   if form1.readin<>edit1.Text then showmessage('Для изменения списка настраиваемых дисков потребуется перезагрузка программы.');
-   close ;
+  close;
 end;
 
 procedure TForm4.Button4Click(Sender: TObject);
 begin
 reg:=tregistry.Create;
+  reg.rootkey:=HKEY_CURRENT_USER;
+  reg.OpenKeyReadOnly('\SOFTWARE\ML2\DiskConfig\');
 edit1.Text:=form1.readin;
 if reg.ValueExists('ActivePage') then
 combobox1.ItemIndex:=reg.ReadInteger('ActivePage')
@@ -174,7 +177,7 @@ checkbox1.Checked:=form1.fastconfigapply;
 close;
 end;
 
-procedure TForm4.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TForm4.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
 button4click(sender);
 end;

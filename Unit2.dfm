@@ -54,9 +54,9 @@ object Form2: TForm2
   object Label3: TLabel
     Left = 64
     Top = 240
-    Width = 37
+    Width = 27
     Height = 16
-    Caption = '1.6.2.1'
+    Caption = '1.6.3'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -119,7 +119,7 @@ object Form2: TForm2
       Top = 96
       Width = 212
       Height = 16
-      Caption = #1053#1072#1096' '#1089#1072#1081#1090': [REDACTED]'
+      Caption = #1053#1072#1096' '#1089#1072#1081#1090': http://[REDACTED]'
     end
     object Label5: TLabel
       Left = 8

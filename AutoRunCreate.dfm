@@ -1,10 +1,10 @@
 object CreateAutoRun: TCreateAutoRun
-  Left = 192
-  Top = 114
-  BorderStyle = bsToolWindow
+  Left = 326
+  Top = 327
+  BorderStyle = bsDialog
   Caption = #1055#1086#1076#1090#1074#1077#1088#1078#1076#1077#1085#1080#1077
   ClientHeight = 138
-  ClientWidth = 337
+  ClientWidth = 377
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,24 +18,26 @@ object CreateAutoRun: TCreateAutoRun
   object Label1: TLabel
     Left = 8
     Top = 8
-    Width = 321
-    Height = 33
+    Width = 361
+    Height = 26
     Caption = 
       #1060#1072#1081#1083' autorun.inf '#1085#1072' '#1076#1080#1089#1082#1077' '#1085#1077' '#1085#1072#1081#1076#1077#1085'. '#1056#1077#1082#1086#1084#1077#1085#1076#1091#1077#1090#1089#1103' '#1077#1075#1086' '#1089#1086#1079#1076#1072#1090#1100'. ' +
       #1048#1084#1103' '#1092#1072#1081#1083#1072':'
     WordWrap = True
   end
   object Label2: TLabel
-    Left = 136
+    Left = 8
     Top = 42
-    Width = 65
+    Width = 361
     Height = 13
+    Alignment = taCenter
+    AutoSize = False
     Caption = 'C:\autorun.inf'
   end
   object Label3: TLabel
     Left = 8
     Top = 64
-    Width = 321
+    Width = 361
     Height = 33
     AutoSize = False
     Caption = 
@@ -44,7 +46,7 @@ object CreateAutoRun: TCreateAutoRun
     WordWrap = True
   end
   object BitBtn1: TBitBtn
-    Left = 32
+    Left = 56
     Top = 104
     Width = 75
     Height = 25
@@ -54,7 +56,7 @@ object CreateAutoRun: TCreateAutoRun
     Kind = bkYes
   end
   object BitBtn2: TBitBtn
-    Left = 232
+    Left = 248
     Top = 104
     Width = 75
     Height = 25

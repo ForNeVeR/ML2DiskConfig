@@ -1,6 +1,7 @@
 object Form4: TForm4
   Left = 493
   Top = 398
+  BorderIcons = [biMinimize, biMaximize]
   BorderStyle = bsToolWindow
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
   ClientHeight = 137
@@ -14,7 +15,6 @@ object Form4: TForm4
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
-  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

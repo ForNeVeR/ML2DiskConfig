@@ -1,10 +1,10 @@
 object delform: Tdelform
-  Left = 327
-  Top = 161
+  Left = 369
+  Top = 277
   BorderStyle = bsDialog
   Caption = #1055#1086#1076#1090#1074#1077#1088#1078#1076#1077#1085#1080#1077
   ClientHeight = 129
-  ClientWidth = 375
+  ClientWidth = 377
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,10 +16,12 @@ object delform: Tdelform
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 48
+    Left = 8
     Top = 8
-    Width = 269
+    Width = 361
     Height = 13
+    Alignment = taCenter
+    AutoSize = False
     Caption = #1042#1099' '#1076#1077#1081#1089#1090#1074#1080#1090#1077#1083#1100#1085#1086' '#1093#1086#1090#1080#1090#1077' '#1091#1076#1072#1083#1080#1090#1100' '#1089#1083#1077#1076#1091#1102#1097#1080#1081' '#1092#1072#1081#1083'?'
   end
   object Label2: TLabel
@@ -32,7 +34,7 @@ object delform: Tdelform
   object Label3: TLabel
     Left = 8
     Top = 48
-    Width = 353
+    Width = 361
     Height = 41
     AutoSize = False
     Caption = 
@@ -52,7 +54,7 @@ object delform: Tdelform
     Kind = bkYes
   end
   object BitBtn2: TBitBtn
-    Left = 232
+    Left = 248
     Top = 96
     Width = 75
     Height = 25

@@ -63,7 +63,6 @@ type
     procedure Button12Click(Sender: TObject);
     procedure seticon(icon:string);
     procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button13Click(Sender: TObject);
     procedure postinitf4;
 
@@ -360,14 +359,7 @@ end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
-  reg:=tregistry.create;
-  reg.rootkey:=HKEY_CURRENT_USER;
-  reg.OpenKey('\SOFTWARE\ML2\DiskConfig\',true);
-  reg.WriteString('ReadDrives',form4.Edit1.text);
-  reg.WriteInteger('ActivePage',form4.ComboBox1.ItemIndex);
-if fastconfigapply then reg.WriteString('FastConfigApply','Yes')
-  else reg.WriteString('FastConfigApply','No');
-  reg.CloseKey;
+
   application.Terminate;
 end;
 
@@ -455,12 +447,6 @@ begin
       else
         integrated:=1;
 end;
-
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-button9click(sender);
-end;
-
 
 procedure TForm1.Button13Click(Sender: TObject);
 //var tmp:textfile;a:pansichar;

@@ -1,6 +1,6 @@
 object Form8: TForm8
-  Left = 192
-  Top = 114
+  Left = 384
+  Top = 266
   BorderIcons = [biMinimize, biMaximize]
   BorderStyle = bsDialog
   Caption = #1055#1086#1076#1086#1078#1076#1080#1090#1077'...'
@@ -23,7 +23,6 @@ object Form8: TForm8
     Height = 41
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Label2'
     WordWrap = True
   end
 end
