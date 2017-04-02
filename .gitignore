@@ -1,4 +1,6 @@
 /.paket/
+/bin/
+/compiler/
 /libs/
 /packages/
 /src/*.exe

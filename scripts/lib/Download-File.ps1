@@ -1,6 +1,6 @@
 param (
     [Parameter(Mandatory = $true)]
-    [string] $Uri,
+    [string] $Url,
 
     [Parameter(Mandatory = $true)]
     [string] $OutPath,
@@ -11,7 +11,14 @@ param (
 
 $ErrorActionPreference = 'Stop'
 
-Invoke-WebRequest $url -OutFile $OutPath
+$outputDirectory = [IO.Path]::GetDirectoryName($OutPath)
+if (-not (Test-Path $outputDirectory)) {
+    New-Item -ItemType Directory $outputDirectory
+}
+
+# TODO: Check hash and not redownload if already loaded
+
+Invoke-WebRequest $Url -OutFile $OutPath
 $hash = (Get-FileHash $OutPath -Algorithm SHA256).Hash
 if ($hash -ne $Sha256) {
     Remove-Item $OutPath
