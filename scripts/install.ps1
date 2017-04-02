@@ -1,40 +1,66 @@
-<#
+﻿<#
 .SYNOPSIS
-    Installs the dependencies for the project build.
-.PARAMETER Directory
-    A directory where Paket binary should be downloaded.
-.PARAMETER PaketVersion
-    A version of Paket bootstrapper binary to download.
-.PARAMETER PaketBootstrapperSha256Hash
-    A SHA-256 hash of Paket bootstrapper binary.
+    Installs the dependencies for the project build: Paket, PascalABC.NET
+    compiler, NuGet packages.
 #>
 param (
-    [string] $Directory = "$PSScriptRoot/../.paket",
-    [string] $PaketVersion = "2.40.11",
-    [string] $PaketBootstrapperSha256Hash = '6B770E158CB196B032F39CC1788BB2A29904C5726F5E9B297EEF9709ED088E71'
+    [string] $ProjectRootDirectory = "$PSScriptRoot/..",
+    [string] $PaketInstallDirectory = "$ProjectRootDirectory/.paket",
+    [string] $CompilerDirectory = "$ProjectRootDirectory/compiler",
+
+    [string] $PaketVersion = '4.1.3',
+    [string] $PaketBootstrapperSha256 = 'E606B5A2BE6776D0165960D6B5557625F6A50D143E745C67617F76705C5C6053',
+    [string] $PaketBootstrapperDownloadUrl = "https://github.com/fsprojects/Paket/releases/download/$PaketVersion/paket.bootstrapper.exe",
+    [string] $CompilerUrl = 'http://pascalabc.net/downloads/PABCNETC.zip',
+    [string] $CompilerSha256 = 'BC1917C585CA7F87BAE4C589E042DCC3354A6E822DF0CEAAA73F29718A540967',
+
+    [string] $PaketBootstrapperPath = "$PaketInstallDirectory/paket.bootstrapper.exe",
+    [string] $PaketPath = "$PaketInstallDirectory/paket.exe",
+    [string] $CompilerArchivePath = "$CompilerDirectory/PABCNETC.zip"
 )
 
 $ErrorActionPreference = 'Stop'
 
-$url = "https://github.com/fsprojects/Paket/releases/download/$PaketVersion/paket.bootstrapper.exe"
-
-$bootstrapper = "$Directory/paket.bootstrapper.exe"
-if (-not (Test-Path $bootstrapper)) {
-    Write-Output "Downloading paket bootstrapper"
-    & "$PSScriptRoot/lib/Download-File.ps1" $url $bootstrapper $PaketBootstrapperSha256Hash
+function install-paket-bootstrapper {
+    & "$PSScriptRoot/lib/Download-File.ps1" `
+        $PaketBootstrapperDownloadUrl `
+        $PaketBootstrapperPath `
+        $PaketBootstrapperSha256 `
+        "Paket Bootstrapper"
 }
 
-if (-not $?) {
-    exit -1
+function install-paket {
+    Write-Output 'Installing Paket…'
+    & $PaketBootstrapperPath $PaketVersion
+    if (-not $?) {
+        throw 'Error installing Paket'
+    }
 }
 
-$paket = "$Directory/paket.exe"
-if (-not (Test-Path $paket)) {
-    Write-Output "Running paket bootstrapper"
-    & $bootstrapper
+function install-pabcnetc {
+    $compilerLoaded = & "$PSScriptRoot/lib/Download-File.ps1" `
+        $CompilerUrl `
+        $CompilerArchivePath `
+        $CompilerSha256 `
+        'PascalABC.NET Compiler'
+    if ($compilerLoaded) {
+        Write-Output "Unpacking PascalABC.NET Compiler…"
+        Expand-Archive $CompilerArchivePath $CompilerDirectory
+    }
 }
 
-Write-Output "Running paket restore"
-& $paket restore
+function install-packages {
+    Write-Output "Running paket restore"
+    & $PaketPath restore
+    if (-not $?) {
+        throw 'Error restoring packages'
+    }
+}
 
-exit -not $?
+if (-not (Test-Path $PaketPath)) {
+    install-paket-bootstrapper
+    install-paket
+}
+
+install-pabcnetc
+install-packages
