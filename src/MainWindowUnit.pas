@@ -1,4 +1,5 @@
 unit MainWindowUnit;
+{$resource MainWindowUnit.MainWindow.xaml}
 
 uses
     Avalonia.Controls,

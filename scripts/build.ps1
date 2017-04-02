@@ -21,6 +21,8 @@ function prepare-libraries {
         "$ProjectRootDirectory/packages/Avalonia.Desktop/lib/net45/*"
         "$ProjectRootDirectory/packages/SharpDX/lib/net45/*"
         "$ProjectRootDirectory/packages/SharpDX.Direct2D1/lib/net45/*"
+        "$ProjectRootDirectory/packages/SharpDX.DXGI/lib/net45/*"
+        "$ProjectRootDirectory/packages/Sprache/lib/net40/*"
         "$ProjectRootDirectory/packages/System.Reactive.Core/lib/net45/*"
         "$ProjectRootDirectory/packages/System.Reactive.Interfaces/lib/net45/*"
         "$ProjectRootDirectory/packages/System.Reactive.Linq/lib/net45/*"

@@ -3,6 +3,8 @@
 {$reference ../libs/Avalonia.Markup.Xaml.dll}
 {$reference ../libs/Avalonia.Win32.dll}
 
+{$resource Program.App.xaml}
+
 uses
     Avalonia,
     Avalonia.Controls,
