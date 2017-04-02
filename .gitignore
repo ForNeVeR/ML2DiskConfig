@@ -1,1 +1,6 @@
-*.pcu
+/.paket/
+/libs/
+/packages/
+/src/*.exe
+/src/*.pcu
+/src/*.pdb
