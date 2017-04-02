@@ -19,8 +19,6 @@ type
         end;
     end;
 begin
-    // TODO: Report bug in parsing the following:
-    // AppBuilder.Configure&<App>.UseWin32.UseDirect2D1;
     var config := AppBuilder.Configure&<App>;
     config.UseWin32;
     config.UseDirect2D1;
