@@ -23,6 +23,7 @@ function prepare-libraries {
         "$ProjectRootDirectory/packages/SharpDX.Direct2D1/lib/net45/*"
         "$ProjectRootDirectory/packages/System.Reactive.Core/lib/net45/*"
         "$ProjectRootDirectory/packages/System.Reactive.Interfaces/lib/net45/*"
+        "$ProjectRootDirectory/packages/System.Reactive.Linq/lib/net45/*"
     )
 
     if (-not (Test-Path $LibraryDirectory)) {
