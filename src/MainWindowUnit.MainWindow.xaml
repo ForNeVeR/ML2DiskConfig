@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-            <TextBlock>Settings</TextBlock>
+            <TextBlock>Select Drive</TextBlock>
             <StackPanel Orientation="Horizontal">
                 <DropDown />
                 <Button>OK</Button>
@@ -36,5 +36,27 @@
         </StackPanel>
 
         <Button Grid.Row="4" Grid.Column="0">Exit</Button>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="5"
+                    Orientation="Vertical">
+            <TextBlock>Settings</TextBlock>
+            <TabControl>
+                <TabItem Header="Manual">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Selected disk autorun.inf contents:</TextBlock>
+                        <TextBox VerticalAlignment="Stretch" /> <!-- TODO[F]: Make this multiline -->
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Automatic">
+                    <TextBlock>TODO[F]</TextBlock>
+                </TabItem>
+                <TabItem Header="Disk Parameters">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Label: " />
+                        <TextBox />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </Window>
