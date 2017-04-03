@@ -8,7 +8,7 @@ param (
     [string] $CompilerDirectory = "$ProjectRootDirectory/compiler",
     [string] $LibraryDirectory = "$ProjectRootDirectory/libs",
 
-    [string] $CompilerPath = "$CompilerDirectory/pabcnetc.exe"
+    [string] $CompilerPath = "$CompilerDirectory/pabcnetcclear.exe"
 )
 
 $ErrorActionPreference = 'Stop'
@@ -37,7 +37,7 @@ function prepare-libraries {
 
 function patch-compiler {
     Write-Output 'Patching compiler to support assembly redirection'
-    Copy-Item "$ProjectRootDirectory/src/app.config" "$CompilerDirectory/pabcnetc.exe.config"
+    Copy-Item "$ProjectRootDirectory/src/app.config" "$CompilerPath.config"
 }
 
 function compile-sources {
@@ -46,6 +46,9 @@ function compile-sources {
     Push-Location "$ProjectRootDirectory/src"
     try {
         & $CompilerPath Program.pas
+        if (-not $?) {
+            throw 'Compilation error'
+        }
     } finally {
         Pop-Location
     }
