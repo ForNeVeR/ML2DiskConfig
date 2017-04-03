@@ -7,3 +7,4 @@ cache:
     - .\.paket -> install.ps1
     - .\compiler -> install.ps1
     - .\packages -> paket.lock
+    - C:\Users\appveyor\AppData\Local\NuGet\Cache
