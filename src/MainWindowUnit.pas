@@ -1,4 +1,5 @@
 unit MainWindowUnit;
+{$resource MainWindowUnit.Logo.png}
 {$resource MainWindowUnit.MainWindow.xaml}
 
 uses

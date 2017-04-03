@@ -1,8 +1,40 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
+        Width="500"
+        Height="450"
         MinWidth="500"
-        MinHeight="300"
-        Title="ML2DiskConfig">
+        MinHeight="450"
+        Title="ML2 Disk Configuration">
     <Grid>
-        <TextBlock>ML2DiskConfig</TextBlock>
+        <!-- TODO: Replace headered StackPanels with self-made GroupBox, see
+            https://github.com/AvaloniaUI/Avalonia/issues/823 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <TextBlock>Settings</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <DropDown />
+                <Button>OK</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Image Grid.Row="1" Grid.Column="0" Source="resm:MainWindowUnit.Logo.png" />
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+            <Button>Settings…</Button>
+            <Button>Help</Button>
+            <Button>About…</Button>
+        </StackPanel>
+
+        <Button Grid.Row="4" Grid.Column="0">Exit</Button>
     </Grid>
 </Window>
