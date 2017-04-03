@@ -45,7 +45,7 @@ function compile-sources {
 
     Push-Location "$ProjectRootDirectory/src"
     try {
-        & $CompilerPath Program.pas
+        & $CompilerPath ML2DiskConfig.pas
         if (-not $?) {
             throw 'Compilation error'
         }
@@ -61,13 +61,13 @@ function deploy-binaries {
     }
 
     $binaries = @(
-        "$ProjectRootDirectory/src/Program.exe"
-        "$ProjectRootDirectory/src/Program.pdb"
+        "$ProjectRootDirectory/src/ML2DiskConfig.exe"
+        "$ProjectRootDirectory/src/ML2DiskConfig.pdb"
     )
 
     Move-Item -Force $binaries $BinaryDirectory
     Copy-Item "$LibraryDirectory/*" $BinaryDirectory
-    Copy-Item "$ProjectRootDirectory/src/app.config" "$BinaryDirectory/Program.exe.config"
+    Copy-Item "$ProjectRootDirectory/src/app.config" "$BinaryDirectory/ML2DiskConfig.exe.config"
 }
 
 prepare-libraries

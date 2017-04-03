@@ -3,7 +3,7 @@
 {$reference ../libs/Avalonia.Markup.Xaml.dll}
 {$reference ../libs/Avalonia.Win32.dll}
 
-{$resource Program.App.xaml}
+{$resource ML2DiskConfig.App.xaml}
 
 uses
     Avalonia,
