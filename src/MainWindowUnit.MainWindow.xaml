@@ -48,7 +48,74 @@
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Automatic">
-                    <TextBlock>TODO[F]</TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Row="0" Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Orientation="Vertical">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>Icon</TextBlock>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0"
+                                        Width="32" Height="32" />
+                                    <TextBlock Grid.Row="0" Grid.Column="1"
+                                            Text="File: " />
+                                    <Button Grid.Row="1" Grid.Column="0"
+                                            Grid.ColumnSpan="2">Change…</Button>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>Automatically Executed File</TextBlock>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" />
+                                    <Button Grid.Row="1">Change…</Button>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>Context Menu Commands</TextBlock>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBox Grid.Row="0" /> <!-- TODO[F]: Make this multiline -->
+                                    <Button Grid.Row="1">Add…</Button>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <Button Grid.Row="1" Grid.Column="0">
+                            Apply Changes
+                        </Button>
+                        <Button Grid.Row="1" Grid.Column="1">
+                            Delete autorun.inf File
+                        </Button>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Disk Parameters">
                     <StackPanel Orientation="Horizontal">
