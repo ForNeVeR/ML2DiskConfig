@@ -1,0 +1,9 @@
+version: 2.0.0.{build}
+install:
+    - ps: scripts/install.ps1
+build_script:
+    - ps: scripts/build.ps1
+cache:
+    - .\.paket -> install.ps1
+    - .\compiler -> install.ps1
+    - .\packages -> paket.lock
