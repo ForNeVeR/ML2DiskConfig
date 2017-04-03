@@ -1,4 +1,4 @@
-ML2DiskConfig [![Status Umbra][status-umbra]][andivionian-status-classifier]
+ML2DiskConfig [![Status Umbra][status-umbra]][andivionian-status-classifier] [![Build status][badge-appveyor]][appveyor]
 =============
 
 This is a program to set disk icons on Windows platform.
@@ -37,7 +37,9 @@ contribution under the MIT license to this project.
 [license]: License.md
 
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier
+[appveyor]: https://ci.appveyor.com/project/ForNeVeR/ml2diskconfig/branch/develop
 [paket]: https://fsprojects.github.io/Paket/
 [pascalabc-net]: http://pascalabc.net/
 
+[badge-appveyor]: https://ci.appveyor.com/api/projects/status/9li67ml5siuwjpvk/branch/develop?svg=true
 [status-umbra]: https://img.shields.io/badge/status-umbra-red.svg
