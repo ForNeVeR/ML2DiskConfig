@@ -29,7 +29,7 @@ function prepare-libraries {
     )
 
     if (-not (Test-Path $LibraryDirectory)) {
-        New-Item -ItemType Directory $LibraryDirectory
+        $null = New-Item -ItemType Directory $LibraryDirectory
     }
 
     Copy-Item $libraries $LibraryDirectory
