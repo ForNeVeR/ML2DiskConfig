@@ -21,7 +21,7 @@ Write-Host "Downloading $Title…"
 
 $outputDirectory = [IO.Path]::GetDirectoryName($OutPath)
 if (-not (Test-Path $outputDirectory)) {
-    New-Item -ItemType Directory $outputDirectory
+    $null = New-Item -ItemType Directory $outputDirectory
 }
 
 function getHash {
