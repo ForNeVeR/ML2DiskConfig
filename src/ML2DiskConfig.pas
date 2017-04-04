@@ -21,8 +21,8 @@ type
         end;
     end;
 begin
-    var config := AppBuilder.Configure&<App>;
-    config.UseWin32;
-    config.UseDirect2D1;
-    config.Start&<MainWindow>;
+    AppBuilder.Configure&<App>()
+        .UseWin32()
+        .UseDirect2D1()
+        .Start&<MainWindow>();
 end.
