@@ -4,7 +4,9 @@ unit MainWindowUnit;
 
 uses
     Avalonia.Controls,
-    Avalonia.Markup.Xaml;
+    Avalonia.Markup.Xaml,
+
+    MainViewModelUnit;
 
 type
     MainWindow = class(Window)
@@ -12,6 +14,7 @@ type
         constructor;
         begin;
             AvaloniaXamlLoader.Load(Self);
+            Self.DataContext := new MainViewModel;
         end;
     end;
 end.
