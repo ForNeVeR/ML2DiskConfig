@@ -15,11 +15,6 @@
   <PARAM name="ImageNumber" value="11">
  </OBJECT>
  <LI><OBJECT type="text/sitemap">
-  <PARAM name="Name" value="&Egrave;&ntilde;&ograve;&icirc;&eth;&egrave;&yuml; &acirc;&aring;&eth;&ntilde;&egrave;&eacute;">
-  <PARAM name="Local" value="history.htm">
-  <PARAM name="ImageNumber" value="17">
- </OBJECT>
- <LI><OBJECT type="text/sitemap">
   <PARAM name="Name" value="&Dstrok;&agrave;&aacute;&icirc;&ograve;&agrave; &ntilde; &iuml;&eth;&icirc;&atilde;&eth;&agrave;&igrave;&igrave;&icirc;&eacute;">
   <PARAM name="Local" value="working.htm">
   <PARAM name="ImageNumber" value="41">
