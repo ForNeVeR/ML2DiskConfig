@@ -1,0 +1,25 @@
+﻿name: Run Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  main:
+    runs-on: windows-latest
+    steps:
+      - name: Fetch the sources
+        uses: actions/checkout@v2
+
+      - name: Install the dependencies
+        shell: pwsh
+        run: ./scripts/install.ps1
+
+      - name: Build
+        shell: pwsh
+        run: ./scripts/build.ps1
