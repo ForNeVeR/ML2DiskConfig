@@ -28,7 +28,7 @@ function getHash {
     (Get-FileHash $OutPath -Algorithm SHA256).Hash
 }
 
-if ((Test-Path $OutPath) -and (getHash -eq $Sha256)) {
+if ((Test-Path $OutPath) -and ((getHash) -eq $Sha256)) {
     Write-Host "$Title already loaded and have proper hash"
     $false
 } else {

@@ -8,11 +8,11 @@ param (
     [string] $PaketInstallDirectory = "$ProjectRootDirectory/.paket",
     [string] $CompilerDirectory = "$ProjectRootDirectory/compiler",
 
-    [string] $PaketVersion = '4.1.3',
-    [string] $PaketBootstrapperSha256 = 'E606B5A2BE6776D0165960D6B5557625F6A50D143E745C67617F76705C5C6053',
+    [string] $PaketVersion = '7.1.5',
+    [string] $PaketBootstrapperSha256 = '2D74A7B6A2DDE3A699F746789E14052F359137C684FEC4D9CFE4E38EF6C5DD3E',
     [string] $PaketBootstrapperDownloadUrl = "https://github.com/fsprojects/Paket/releases/download/$PaketVersion/paket.bootstrapper.exe",
-    [string] $CompilerUrl = 'http://pascalabc.net/downloads/PABCNETC.zip',
-    [string] $CompilerSha256 = '919311FE8C8A3167E1910CFE073017A4A0523BB546CD0AAC17AFF1715F557CEA',
+    [string] $CompilerUrl = 'https://github.com/ForNeVeR/pascalabcnet/releases/download/3.8.3.3178.preview.1/PABCNETC.zip',
+    [string] $CompilerSha256 = '018E4623CCF49750E56DB82967D3D936E428EE80CFE22358AC541FF78C8C965A',
 
     [string] $PaketBootstrapperPath = "$PaketInstallDirectory/paket.bootstrapper.exe",
     [string] $PaketPath = "$PaketInstallDirectory/paket.exe",

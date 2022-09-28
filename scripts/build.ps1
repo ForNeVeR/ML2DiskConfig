@@ -35,17 +35,12 @@ function prepare-libraries {
     Copy-Item $libraries $LibraryDirectory
 }
 
-function patch-compiler {
-    Write-Output 'Patching compiler to support assembly redirection'
-    Copy-Item "$ProjectRootDirectory/src/app.config" "$CompilerPath.config"
-}
-
 function compile-sources {
     Write-Output 'Compiling sources…'
 
     Push-Location "$ProjectRootDirectory/src"
     try {
-        & $CompilerPath ML2DiskConfig.pas
+        & $CompilerPath /Debug:1 ML2DiskConfig.pas
         if (-not $?) {
             throw 'Compilation error'
         }
@@ -71,6 +66,5 @@ function deploy-binaries {
 }
 
 prepare-libraries
-patch-compiler
 compile-sources
 deploy-binaries
