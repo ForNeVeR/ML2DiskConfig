@@ -1,10 +1,6 @@
 /.idea/
-/.paket/
-/bin/
-/compiler/
-/libs/
-/packages/
-/src/*.dll
-/src/*.exe
-/src/*.pcu
-/src/*.pdb
+
+bin/
+obj/
+
+*.pcu
