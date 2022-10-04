@@ -6,22 +6,19 @@ This is a program to set disk icons on Windows platform.
 Build
 -----
 
-First of all, install build prerequisites: [Paket][paket] and
-[PascalABC.NET][pascalabc-net].
+First of all, install the build prerequisite: [.NET SDK][dotnet.download] version 6 or later.
 
-There's a convenience script that'll download the prerequisites and install them
-into a project-local location: [`scripts/install.ps1`][install-script].
-
-After that, build the project with [`scripts/build.ps1`][build-script]:
+After that, build the project using the following shell command:
 
 ```console
-$ scripts/install.ps1
-$ scripts/build.ps1
+$ dotnet build
 ```
 
-Consult scripts' parameters sections if you have some specific needs.
+Run the program from sources using the following shell command:
 
-After the build, `bin` directory will contain the resulting binary files.
+```console
+$ dotnet run
+```
 
 Documentation
 -------------
@@ -30,20 +27,9 @@ Documentation
 - [License][docs.license] (MIT)
 - [Help][docs.help] (in Russian)
 
-Copyright
----------
-
-This project is distributed under the MIT license (see the [`License.md`][docs.license] file in the project root).
-
-By submitting a pull request for this project, you agree to license you
-contribution under the MIT license to this project.
-
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier
-[build-script]: scripts/build.ps1
 [docs.changelog]: ./CHANGELOG.md
-[docs.license]: ./LICENSE.md
 [docs.help]: ./Help/
-[install-script]: scripts/install.ps1
-[paket]: https://fsprojects.github.io/Paket/
-[pascalabc-net]: http://pascalabc.net/
+[docs.license]: ./LICENSE.md
+[dotnet.download]: https://dotnet.microsoft.com/en-us/download
 [status-umbra]: https://img.shields.io/badge/status-umbra-red.svg
