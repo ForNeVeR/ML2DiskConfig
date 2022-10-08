@@ -17,9 +17,15 @@ type
             AvaloniaXamlLoader.Load(Self);
         end;
     end;
-begin
+
+function BuildAvaloniaApp(): AppBuilder;
+begin;
     var appBuilder := AppBuilder.Configure&<App>();
-    Win32ApplicationExtensions.UseWin32(appBuilder)
-        .UseDirect2D1()
-        .Start&<MainWindow>();
+    Result :=
+        Win32ApplicationExtensions.UseWin32(appBuilder)
+            .UseDirect2D1();
+end;
+
+begin
+    BuildAvaloniaApp().Start&<MainWindow>();
 end.
